@@ -48,14 +48,26 @@ class HandleJson {
             it.params.forEach { _it ->
                 param.addParam(_it.paramName, _it.paramType, _it.description)
             }
-            js.addStaticFunction(
-                it.funcName,
-                it.description,
-                param.getParams(),
-                param.getParamList(),
-                it.returnType,
-                it.returnDescription
-            )
+            if (it.isStatic) {
+                js.addStaticFunction(
+                    it.funcName,
+                    it.description,
+                    param.getParams(),
+                    param.getParamList(),
+                    it.returnType,
+                    it.returnDescription
+                )
+            }else{
+                    js.addDynamicFunction(
+                        it.funcName,
+                        it.description,
+                        param.getParams(),
+                        param.getParamList(),
+                        it.returnType,
+                        it.returnDescription
+                    )
+
+            }
         }
 
 

@@ -5,12 +5,12 @@ import java.io.File
 @Slf4j
 class ExportGenerate {
 
-    fun run(){
+    fun run(jsonStr:String) {
         val gson = Gson()
         val libraryUrl = "Library"
         val jsUrl = "$libraryUrl\\JS\\"
         val luaUrl = "$libraryUrl\\Lua\\"
-        val dirList = gson.fromJson(getJson(), JsonData::class.java)
+        val dirList = gson.fromJson(jsonStr, JsonData::class.java)
         File(jsUrl).mkdirs()
         File(luaUrl).mkdirs()
 
@@ -33,11 +33,19 @@ class ExportGenerate {
                 log.info("Writing Lua File to $luaDirUrl\\${_it.className}.lua")
 
 
-                val jsCode = HandleJson().getJSCode(_it)
-                File("$jsDirUrl\\${_it.className}.js").writeText(jsCode)
-                log.info("Writing Lua File to $jsDirUrl\\${_it.className}.js")
+                val jsCode = HandleJson()
+                File("$jsDirUrl\\${_it.className}.js").writeText(jsCode.getJSCode(_it))
+                log.info("Writing JS File to $jsDirUrl\\${_it.className}.js")
+
+                val temp = "\n/// <reference path=\"./${it.dirName}/${_it.className}.js\" />"
+                File("${jsUrl}Api.js").appendText(temp)
+                log.info("Writing JS Api File to ${jsUrl}Api.js")
+
             }
 
         }
+        log.info("Generate Successful")
+        log.info("By moxicat")
+        log.info("More info plz come to https://github.com/LiteLDev-LXL/LXLDevHelper-generate")
     }
 }
