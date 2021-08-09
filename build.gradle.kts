@@ -16,6 +16,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("com.google.code.gson:gson:2.8.7")
+    implementation("org.slf4j:slf4j-simple:1.7.29")
+
 }
 
 tasks.test {
