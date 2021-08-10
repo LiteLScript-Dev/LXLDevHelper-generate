@@ -21,25 +21,20 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-      
+      run: chmod +x gradlew    
     - name: Build with Gradle
       run: ./gradlew build
-      
     - name: Copy file
       run: cp -a ./build/libs/*.jar Generate.jar
     - name: ls
       run: ls
-      
     - name: commit
       run: |
         git config --global user.email 3601594248@qq.com
         git config --global user.name moxicat
         git add Generate.jar
         git commit -m "update" -a
-		
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
