@@ -25,5 +25,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Start generate
-      run: java - jar ./build/libs/*.jar
+    - name: copy file
+      run: copy build/libs/*.jar run.jar
+    - name: ls
+      run: ls
