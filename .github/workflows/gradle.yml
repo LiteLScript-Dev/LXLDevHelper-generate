@@ -36,10 +36,9 @@ jobs:
         git add Generate.jar
         git commit -m "update" -a
     - name: Push changes
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: git@github.com:LiteLDev-LXL/LXLDevHelper-DocSrc.git
-        BRANCH: gh-pages
-        FOLDER: build/libs
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: ad-m/github-push-action@master
+      with:
+        repository: "https://github.com/LiteLDev-LXL/LXLDevHelper-DocSrc.git"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
       
