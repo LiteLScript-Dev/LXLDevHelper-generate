@@ -1,25 +1,25 @@
 /**
- * 方块对象
+ * 鏂瑰潡瀵硅薄
  */ 
 class Block {
   
 /**
- * 游戏内显示的方块名称
+ * 娓告垙鍐呮樉绀虹殑鏂瑰潡鍚嶇О
  * @type String
  */ 
  name;
 /**
- * 方块标准类型名	
+ * 鏂瑰潡鏍囧噯绫诲瀷鍚峔t
  * @type String
  */ 
  type;
 /**
- * 方块的游戏内id
+ * 鏂瑰潡鐨勬父鎴忓唴id
  * @type Integer
  */ 
  id;
 /**
- * 方块所在坐标
+ * 鏂瑰潡鎵�鍦ㄥ潗鏍�
  * @type IntPos
  */ 
  pos;
@@ -28,23 +28,23 @@ class Block {
 
 
 /**
- * 获取方块对应的NBT对象
- * @returns {NbtCompound} 方块的NBT对象
+ * 鑾峰彇鏂瑰潡瀵瑰簲鐨凬BT瀵硅薄
+ * @returns {NbtCompound} 鏂瑰潡鐨凬BT瀵硅薄
  */
  getNbt()
 
 /**
- * 写入方块对应的NBT对象
- * @param {NbtCompound} nbt NBT对象
- * @returns {Boolean} 是否成功写入
+ * 鍐欏叆鏂瑰潡瀵瑰簲鐨凬BT瀵硅薄
+ * @param {NbtCompound} nbt NBT瀵硅薄
+ * @returns {Boolean} 鏄惁鎴愬姛鍐欏叆
  */
  setNbt(nbt)
 
 /**
- * 获取方块的BlockState
-方便函数，协助解析方块BlockState并转换为Object，方便读取与解析
-等价于脚本执行block.getNbt().getTag("states").toObject()
- * @returns {Object} 方块的BlockState
+ * 鑾峰彇鏂瑰潡鐨凚lockState
+鏂逛究鍑芥暟锛屽崗鍔╄В鏋愭柟鍧桞lockState骞惰浆鎹负Object锛屾柟渚胯鍙栦笌瑙ｆ瀽
+绛変环浜庤剼鏈墽琛宐lock.getNbt().getTag("states").toObject()
+ * @returns {Object} 鏂瑰潡鐨凚lockState
  */
  getBlockState()  
 

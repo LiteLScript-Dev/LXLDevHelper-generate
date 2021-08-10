@@ -1,15 +1,15 @@
 /**
- * mc.runcmdEx的返回结果
+ * mc.runcmdEx鐨勮繑鍥炵粨鏋�
  */ 
 class ObjectRuncmdEx {
   
 /**
- * 是否执行成功
+ * 鏄惁鎵ц鎴愬姛
  * @type Boolean
  */ 
  success;
 /**
- * BDS执行命令后的输出结果
+ * BDS鎵ц鍛戒护鍚庣殑杈撳嚭缁撴灉
  * @type String
  */ 
  output;

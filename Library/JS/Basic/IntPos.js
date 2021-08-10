@@ -1,31 +1,31 @@
 /**
- * 🎯 坐标对象
-多用来表示方块坐标等用整数表示的位置
+ * 馃幆 鍧愭爣瀵硅薄
+澶氱敤鏉ヨ〃绀烘柟鍧楀潗鏍囩瓑鐢ㄦ暣鏁拌〃绀虹殑浣嶇疆
  */ 
 class IntPos {
   
 /**
- * x 坐标
+ * x 鍧愭爣
  * @type Integer
  */ 
  x;
 /**
- * y 坐标
+ * y 鍧愭爣
  * @type Integer
  */ 
  y;
 /**
- * z 坐标
+ * z 鍧愭爣
  * @type Integer
  */ 
  z;
 /**
- * 维度文字名
+ * 缁村害鏂囧瓧鍚�
  * @type String
  */ 
  dim;
 /**
- * 维度ID
+ * 缁村害ID
  * @type Integer
  */ 
  dimid;

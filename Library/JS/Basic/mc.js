@@ -1,5 +1,5 @@
 /**
- * mc通用接口
+ * mc閫氱敤鎺ュ彛
  */ 
 class mc {
   
@@ -8,95 +8,95 @@ class mc {
 
 
 /**
- * 生成一个浮点数坐标对象
- * @param {Float} x x 坐标
- * @param {Float} y y 坐标
- * @param {Float} z z 坐标
- * @param {Integer} dimid  维度ID：0 代表主世界，1 代表下界，2 代表末地
- * @returns {FloatPos} 一个浮点数坐标对象
+ * 鐢熸垚涓�涓诞鐐规暟鍧愭爣瀵硅薄
+ * @param {Float} x x 鍧愭爣
+ * @param {Float} y y 鍧愭爣
+ * @param {Float} z z 鍧愭爣
+ * @param {Integer} dimid  缁村害ID锛�0 浠ｈ〃涓讳笘鐣岋紝1 浠ｈ〃涓嬬晫锛�2 浠ｈ〃鏈湴
+ * @returns {FloatPos} 涓�涓诞鐐规暟鍧愭爣瀵硅薄
  */
  static newFloatPos(x,y,z,dimid )
 
 /**
- * 获取BDS服务端版本号
- * @returns {String} 服务端版本号字符串，格式形如v1.17.10
+ * 鑾峰彇BDS鏈嶅姟绔増鏈彿
+ * @returns {String} 鏈嶅姟绔増鏈彿瀛楃涓诧紝鏍煎紡褰㈠v1.17.10
  */
  static getBDSVersion()
 
 /**
- * 执行一条后台命令
- * @param {String} cmd 待执行的命令
- * @returns {Boolean} 是否执行成功
+ * 鎵ц涓�鏉″悗鍙板懡浠�
+ * @param {String} cmd 寰呮墽琛岀殑鍛戒护
+ * @returns {Boolean} 鏄惁鎵ц鎴愬姛
  */
  static runcmd(cmd)
 
 /**
- * 执行一条后台命令（强化版）
+ * 鎵ц涓�鏉″悗鍙板懡浠わ紙寮哄寲鐗堬級
  * @param {String} cmd 
- * @returns {ObjectRuncmdEx} 命令执行结果Object
+ * @returns {ObjectRuncmdEx} 鍛戒护鎵ц缁撴灉Object
  */
  static runcmdEx(cmd)
 
 /**
- * 通过方块坐标手动生成方块对象
-通过此函数来手动生成对象，注意，你要获取的方块必须处于已被加载的范围中，否则会出现问题
- * @param {IntPos} pos 方块坐标对象（或者使用x, y, z, dimid来确定方块位置）
- * @returns {Block|Null} 如返回值为 Null 则表示获取方块失败
-注意：不要长期保存一个方块对象
-当方块对象对应的方块被销毁时，对应的方块对象将变得无效。因此，如果有长期操作某个方块的需要，请通过上述途径获取实时的方块对象
+ * 閫氳繃鏂瑰潡鍧愭爣鎵嬪姩鐢熸垚鏂瑰潡瀵硅薄
+閫氳繃姝ゅ嚱鏁版潵鎵嬪姩鐢熸垚瀵硅薄锛屾敞鎰忥紝浣犺鑾峰彇鐨勬柟鍧楀繀椤诲浜庡凡琚姞杞界殑鑼冨洿涓紝鍚﹀垯浼氬嚭鐜伴棶棰�
+ * @param {IntPos} pos 鏂瑰潡鍧愭爣瀵硅薄锛堟垨鑰呬娇鐢▁, y, z, dimid鏉ョ‘瀹氭柟鍧椾綅缃級
+ * @returns {Block|Null} 濡傝繑鍥炲�间负 Null 鍒欒〃绀鸿幏鍙栨柟鍧楀け璐r
+娉ㄦ剰锛氫笉瑕侀暱鏈熶繚瀛樹竴涓柟鍧楀璞r
+褰撴柟鍧楀璞″搴旂殑鏂瑰潡琚攢姣佹椂锛屽搴旂殑鏂瑰潡瀵硅薄灏嗗彉寰楁棤鏁堛�傚洜姝わ紝濡傛灉鏈夐暱鏈熸搷浣滄煇涓柟鍧楃殑闇�瑕侊紝璇烽�氳繃涓婅堪閫斿緞鑾峰彇瀹炴椂鐨勬柟鍧楀璞�
  */
  static getBlock(pos)
 
 /**
- * 通过方块坐标手动生成方块对象
-通过此函数来手动生成对象，注意，你要获取的方块必须处于已被加载的范围中，否则会出现问题
- * @param {Integer} x 方块x坐标
- * @param {Integer} y 方块y坐标
- * @param {Integer} z 方块z坐标
- * @param {Integer} dimid 方块维度
- * @returns {Block|Null} 如返回值为 Null 则表示获取方块失败
-注意：不要长期保存一个方块对象
-当方块对象对应的方块被销毁时，对应的方块对象将变得无效。因此，如果有长期操作某个方块的需要，请通过上述途径获取实时的方块对象
+ * 閫氳繃鏂瑰潡鍧愭爣鎵嬪姩鐢熸垚鏂瑰潡瀵硅薄
+閫氳繃姝ゅ嚱鏁版潵鎵嬪姩鐢熸垚瀵硅薄锛屾敞鎰忥紝浣犺鑾峰彇鐨勬柟鍧楀繀椤诲浜庡凡琚姞杞界殑鑼冨洿涓紝鍚﹀垯浼氬嚭鐜伴棶棰�
+ * @param {Integer} x 鏂瑰潡x鍧愭爣
+ * @param {Integer} y 鏂瑰潡y鍧愭爣
+ * @param {Integer} z 鏂瑰潡z鍧愭爣
+ * @param {Integer} dimid 鏂瑰潡缁村害
+ * @returns {Block|Null} 濡傝繑鍥炲�间负 Null 鍒欒〃绀鸿幏鍙栨柟鍧楀け璐r
+娉ㄦ剰锛氫笉瑕侀暱鏈熶繚瀛樹竴涓柟鍧楀璞r
+褰撴柟鍧楀璞″搴旂殑鏂瑰潡琚攢姣佹椂锛屽搴旂殑鏂瑰潡瀵硅薄灏嗗彉寰楁棤鏁堛�傚洜姝わ紝濡傛灉鏈夐暱鏈熸搷浣滄煇涓柟鍧楃殑闇�瑕侊紝璇烽�氳繃涓婅堪閫斿緞鑾峰彇瀹炴椂鐨勬柟鍧楀璞�
  */
  static getBlock(x,y,z,dimid)
 
 /**
- * 设置指定位置的方块
- * @param {IntPos} pos 目标方块位置
- * @param {Block|String} block 要设置成的方块对象或者方块名
- * @returns {Boolean} 是否成功设置
+ * 璁剧疆鎸囧畾浣嶇疆鐨勬柟鍧�
+ * @param {IntPos} pos 鐩爣鏂瑰潡浣嶇疆
+ * @param {Block|String} block 瑕佽缃垚鐨勬柟鍧楀璞℃垨鑰呮柟鍧楀悕
+ * @returns {Boolean} 鏄惁鎴愬姛璁剧疆
  */
  static setBlock(pos,block)
 
 /**
- * 设置指定位置的方块
-通过此函数，将一个坐标对应的方块设置成另一个，类似于命令 /setblock
-如果使用方块名称，则方块名称须为标准类型名，且首字母大写，类似于 Stone
-否则，函数将执行失败
- * @param {Integer} x 方块x坐标
- * @param {Integer} y 方块y坐标
- * @param {Integer} z 方块z坐标
- * @param {Integer} dimid 方块维度
- * @param {Block|String} block 要设置成的方块对象或者方块名
- * @returns {Boolean} 是否成功设置
+ * 璁剧疆鎸囧畾浣嶇疆鐨勬柟鍧梊r
+閫氳繃姝ゅ嚱鏁帮紝灏嗕竴涓潗鏍囧搴旂殑鏂瑰潡璁剧疆鎴愬彟涓�涓紝绫讳技浜庡懡浠� /setblock
+濡傛灉浣跨敤鏂瑰潡鍚嶇О锛屽垯鏂瑰潡鍚嶇О椤讳负鏍囧噯绫诲瀷鍚嶏紝涓旈瀛楁瘝澶у啓锛岀被浼间簬 Stone
+鍚﹀垯锛屽嚱鏁板皢鎵ц澶辫触
+ * @param {Integer} x 鏂瑰潡x鍧愭爣
+ * @param {Integer} y 鏂瑰潡y鍧愭爣
+ * @param {Integer} z 鏂瑰潡z鍧愭爣
+ * @param {Integer} dimid 鏂瑰潡缁村害
+ * @param {Block|String} block 瑕佽缃垚鐨勬柟鍧楀璞℃垨鑰呮柟鍧楀悕
+ * @returns {Boolean} 鏄惁鎴愬姛璁剧疆
  */
  static setBlock(x,y,z,dimid,block)
 
 /**
- * 在指定位置生成粒子效果
- * @param {IntPos} pos 目标方块位置
- * @param {String} type 要生成的粒子效果名称（可查阅wiki得知）
- * @returns {Boolean} 是否成功生成
+ * 鍦ㄦ寚瀹氫綅缃敓鎴愮矑瀛愭晥鏋�
+ * @param {IntPos} pos 鐩爣鏂瑰潡浣嶇疆
+ * @param {String} type 瑕佺敓鎴愮殑绮掑瓙鏁堟灉鍚嶇О锛堝彲鏌ラ槄wiki寰楃煡锛�
+ * @returns {Boolean} 鏄惁鎴愬姛鐢熸垚
  */
  static spawnParticle(pos,type)
 
 /**
- * 在指定位置生成粒子效果
- * @param {Integer} x 方块x坐标
- * @param {Integer} y 方块y坐标
- * @param {Integer} z 方块z坐标
- * @param {String} type 要生成的粒子效果名称（可查阅wiki得知）
- * @returns {Boolean} 是否成功生成
+ * 鍦ㄦ寚瀹氫綅缃敓鎴愮矑瀛愭晥鏋�
+ * @param {Integer} x 鏂瑰潡x鍧愭爣
+ * @param {Integer} y 鏂瑰潡y鍧愭爣
+ * @param {Integer} z 鏂瑰潡z鍧愭爣
+ * @param {String} type 瑕佺敓鎴愮殑绮掑瓙鏁堟灉鍚嶇О锛堝彲鏌ラ槄wiki寰楃煡锛�
+ * @returns {Boolean} 鏄惁鎴愬姛鐢熸垚
  */
  static spawnParticle(x,y,z,type)  
 
