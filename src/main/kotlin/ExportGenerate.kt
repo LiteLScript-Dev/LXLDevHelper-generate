@@ -7,9 +7,9 @@ class ExportGenerate {
 
     fun run(jsonStr:String) {
         val gson = Gson()
-        val libraryUrl = "Library"
-        val jsUrl = "$libraryUrl\\JS\\"
-        val luaUrl = "$libraryUrl\\Lua\\"
+        val libraryUrl = "./Library"
+        val jsUrl = "$libraryUrl/JS/"
+        val luaUrl = "$libraryUrl/Lua/"
         val dirList = gson.fromJson(jsonStr, JsonData::class.java)
         File(jsUrl).mkdirs()
         File(luaUrl).mkdirs()
@@ -29,13 +29,13 @@ class ExportGenerate {
 
             it.allClass.forEach { _it ->
                 val luaCode = HandleJson().getLuaCode(_it)
-                File("$luaDirUrl\\${_it.className}.lua").writeText(luaCode)
-                log.info("Writing Lua File to $luaDirUrl\\${_it.className}.lua")
+                File("$luaDirUrl/${_it.className}.lua").writeText(luaCode)
+                log.info("Writing Lua File to $luaDirUrl/${_it.className}.lua")
 
 
                 val jsCode = HandleJson()
-                File("$jsDirUrl\\${_it.className}.js").writeText(jsCode.getJSCode(_it))
-                log.info("Writing JS File to $jsDirUrl\\${_it.className}.js")
+                File("$jsDirUrl/${_it.className}.js").writeText(jsCode.getJSCode(_it))
+                log.info("Writing JS File to $jsDirUrl/${_it.className}.js")
 
                 val temp = "\n/// <reference path=\"./${it.dirName}/${_it.className}.js\" />"
                 File("${jsUrl}Api.js").appendText(temp)
