@@ -39,6 +39,6 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         repository: "LiteLDev-LXL/LXLDevHelper-DocSrc"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: "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"
         branch: ${{ github.ref }}
       
