@@ -15,13 +15,13 @@ class ComeToLua constructor(className: String) {
 
     fun addStaticFunction(function: String, description: String, params: String,paramList:String ,type: String, returnDesc: String) {
         val desc = description.replace("\n","\n---")
-        val tem = LuaTemplate.getFunction("$classname.$function", desc, params, paramList, type, returnDesc)
+        val tem = LuaTemplate.getFunction("$classname.$function", desc, params, paramList, type, returnDesc.replace("\n","\n---"))
         staticFunctions.add(tem)
     }
 
     fun addDynamicFunction(function: String, description: String, params: String,paramList:String ,type: String, returnDesc: String) {
         val desc = description.replace("\n","\n---")
-        val tem = LuaTemplate.getFunction("$classname:$function", desc, params, paramList, type, returnDesc)
+        val tem = LuaTemplate.getFunction("$classname:$function", desc, params, paramList, type, returnDesc.replace("\n","\n---"))
         staticFunctions.add(tem)
     }
 
