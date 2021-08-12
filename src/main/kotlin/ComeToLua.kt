@@ -55,7 +55,7 @@ class ComeToLua constructor(className: String) {
         staticFunctions.add(tem)
     }
 
-    fun getData(): String {
+    fun getData(OnlyFunction: Boolean): String {
         var field = "\n"
         this.staticValues.forEach { it ->
             field += it
@@ -65,7 +65,11 @@ class ComeToLua constructor(className: String) {
         this.staticFunctions.forEach { it ->
             func = func + "\n\n" + it
         }
-        return base + func
+        return if (OnlyFunction) {
+            func
+        } else {
+            base + func
+        }
     }
 }
 

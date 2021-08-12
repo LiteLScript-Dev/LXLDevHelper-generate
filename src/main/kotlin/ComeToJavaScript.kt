@@ -39,7 +39,7 @@ class ComeToJavaScript constructor(className: String) {
         staticFunctions.add(tem)
     }
 
-    fun getData(): String {
+    fun getData(OnlyFunction: Boolean): String {
         var field = "\n"
         this.staticValues.forEach { it ->
             field += it + "\n"
@@ -48,8 +48,11 @@ class ComeToJavaScript constructor(className: String) {
         this.staticFunctions.forEach { it ->
             func = func + "\n\n" + it
         }
-        val base = JSTemplate.getClass(this.classname, field, this.description, func)
-        return base
+        return if (OnlyFunction) {
+            field+"\n"+func
+        } else {
+            JSTemplate.getClass(this.classname, field, this.description, func)
+        }
     }
 
 }

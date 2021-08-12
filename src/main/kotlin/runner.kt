@@ -47,7 +47,7 @@ public class Runner{
                 response.append(allText)
                 println("Successfully obtained repo data")
                 val data = response.toString()
-                ExportGenerate().run(HandleJson().HandleType(data))
+                ExportGenerate().run(data)
 
             } catch (ex: Exception) {
                 ex.printStackTrace()

@@ -5,26 +5,23 @@ import java.io.File
 @Slf4j
 class ExportGenerate {
 
-    fun run(jsonStr:String) {
+    fun run(jsonStr: String) {
         val gson = Gson()
         val libraryUrl = "./Library"
         val jsUrl = "$libraryUrl/JS/"
         val luaUrl = "$libraryUrl/Lua/"
-        val dirList = gson.fromJson(jsonStr, JsonData::class.java)
+        val dirListLua = gson.fromJson(HandleJson().HandleLuaType(jsonStr), JsonData::class.java)
         File(jsUrl).mkdirs()
         File(luaUrl).mkdirs()
 
         log.info("Making Dir $jsUrl")
         log.info("Making Dir $luaUrl")
 
-        dirList.dirCollection.forEach { it ->
-            val jsDirUrl = jsUrl + it.dirName
+        dirListLua.dirCollection.forEach { it ->
             val luaDirUrl = luaUrl + it.dirName
 
-            File(jsDirUrl).mkdirs()
             File(luaDirUrl).mkdirs()
 
-            log.info("Making Dir $jsDirUrl")
             log.info("Making Dir $luaDirUrl")
 
             it.allClass.forEach { _it ->
@@ -32,6 +29,19 @@ class ExportGenerate {
                 File("$luaDirUrl/${_it.className}.lua").writeText(luaCode)
                 log.info("Writing Lua File to $luaDirUrl/${_it.className}.lua")
 
+
+            }
+
+        }
+        val dirListJS = gson.fromJson(HandleJson().HandleJsType(jsonStr), JsonData::class.java)
+        dirListJS.dirCollection.forEach { it ->
+            val jsDirUrl = jsUrl + it.dirName
+
+            File(jsDirUrl).mkdirs()
+
+            log.info("Making Dir $jsDirUrl")
+
+            it.allClass.forEach { _it ->
 
                 val jsCode = HandleJson()
                 File("$jsDirUrl/${_it.className}.js").writeText(jsCode.getJSCode(_it))

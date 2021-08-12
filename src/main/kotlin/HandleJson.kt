@@ -10,7 +10,7 @@ class HandleJson {
         luaClass.allFunc.forEach { it ->
             val param = LuaFunctionParams()
             it.params.forEach { its ->
-                param.addParam(its.paramName, its.paramType, its.description,its.optional)
+                param.addParam(its.paramName, its.paramType, its.description, its.optional)
             }
             if (it.isStatic) {
                 lua.addStaticFunction(
@@ -35,7 +35,11 @@ class HandleJson {
         luaClass.allProperty.forEach { it ->
             lua.addStaticValue(it.propertyName, it.propertyType, it.propertyType)
         }
-        return lua.getData()
+        return if (luaClass.className == "Global") {
+            lua.getData(true)
+        } else {
+            lua.getData(false)
+        }
     }
 
 
@@ -57,28 +61,48 @@ class HandleJson {
                     it.returnType,
                     it.returnDescription
                 )
-            }else{
-                    js.addDynamicFunction(
-                        it.funcName,
-                        it.description,
-                        param.getParams(),
-                        param.getParamList(),
-                        it.returnType,
-                        it.returnDescription
-                    )
+            } else {
+                js.addDynamicFunction(
+                    it.funcName,
+                    it.description,
+                    param.getParams(),
+                    param.getParamList(),
+                    it.returnType,
+                    it.returnDescription
+                )
 
             }
         }
 
 
         jsClass.allProperty.forEach { it ->
-            js.addStaticValue(it.propertyName,it.propertyType,it.description)
+            js.addStaticValue(it.propertyName, it.propertyType, it.description)
         }
 
-        return js.getData()
+        return if (jsClass.className == "Global") {
+            js.getData(true)
+        } else {
+            js.getData(false)
+        }
     }
-    fun HandleType(data:String):String{
-        val map = mutableMapOf<String,String>()
+
+    fun HandleLuaType(data: String): String {
+        val map = mutableMapOf<String, String>()
+        map["String"] = "string"
+        map["Boolean"] = "boolean"
+        map["Array"] = "{}"
+        map["Null"] = "nil"
+        map["Integer"] = "number"
+        var datas = data
+        map.forEach { (t, u) ->
+            datas = datas.replace(t, u)
+        }
+        print("Successfully processed data type")
+        return datas
+
+    }
+    fun HandleJsType(data: String): String {
+        val map = mutableMapOf<String, String>()
         map["String"] = "string"
         map["Boolean"] = "boolean"
         map["Array"] = "{}"
@@ -86,7 +110,7 @@ class HandleJson {
         map["Integer"] = "number"
         var datas = data
         map.forEach { (t, u) ->
-           datas = datas.replace(t,u)
+            datas = datas.replace(t, u)
         }
         print("Successfully processed data type")
         return datas
