@@ -76,6 +76,17 @@ class JSFunctionParams {
             val tem = JSTemplate.getFunctionParam(param, "($field)", paramDesc)
             this.staticParams.add(tem)
             this.staticParamList.add(param)
+        } else if(type.contains("ParamArray@")){
+            val msg = type.substring("ParamArray@".length)
+            val tem = JSTemplate.getFunctionParam(param,"...$msg", paramDesc)
+            this.staticParams.add(tem)
+            this.staticParamList.add("...$param")
+        }else if(type.contains("Array@")){
+                val msg = type.substring("Array@".length)
+                print(msg)
+                val tem = JSTemplate.getFunctionParam(param, "$msg[]", paramDesc)
+                this.staticParams.add(tem)
+                this.staticParamList.add(param)
         }else{
                 val tem = JSTemplate.getFunctionParam(param, type, paramDesc)
                 this.staticParams.add(tem)

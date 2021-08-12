@@ -112,9 +112,19 @@ class LuaFunctionParams {
             val tem = LuaTemplate.getNoneFunctionParam(param, field, json.func.returnType, paramDesc);
             this.staticParams.add(tem)
             this.staticParamList.add(param)
-        } else {
+        }else if(type.contains("ParamArray@")){
+            val msg = type.substring("ParamArray@".length)
+            val msg2 = "---@vararg $msg\n"
+            this.staticParams.add(msg2)
+            this.staticParamList.add("...")
+        } else if(type.contains("Array@")){
+            val msg = type.substring("Array@".length)
+            val tem = LuaTemplate.getFunctionParam(param, "$msg[]", paramDesc)
+            this.staticParams.add(tem)
+            this.staticParamList.add(param)
+        }else {
            val typeC = if(type.contains("\"")){
-               "\"$type\""
+               "\\\"$type\\\""
            }else{
                type
            }

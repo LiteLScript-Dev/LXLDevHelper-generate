@@ -1,6 +1,6 @@
 object LuaTemplate {
     fun getClassBase(className: String, field: String, description: String): String {
-        return """---@class $className $description $field $className = {}"""
+        return """---$description\n---@class $className $field $className = {}"""
     }
 
     fun getStaticValue(name: String, type: String, description: String): String {
@@ -11,7 +11,7 @@ object LuaTemplate {
         return "---@param $param $type $paramDesc\n"
     }
     fun getNoneFunctionParam(param: String, type: String, returnType:String,paramDesc: String): String {
-        return "---@param $param fun($type):$returnType $paramDesc\n"
+        return "---@param $param fun($type) $paramDesc\n"
     }
 
     fun getFunction(

@@ -112,7 +112,7 @@ class HandleJson {
         val map = mutableMapOf<String, String>()
         map["String"] = "string"
         map["Boolean"] = "boolean"
-        map["Array"] = "{}"
+        map["\"Array\""] = "\"{}\""
         map["Null"] = "nil"
         map["Integer"] = "number"
         map["Any"] = "any"
@@ -128,7 +128,7 @@ class HandleJson {
         val map = mutableMapOf<String, String>()
         map["String"] = "string"
         map["Boolean"] = "boolean"
-        map["Array"] = "{}"
+        map["\"Array\""] = "\"{}\""
         map["Null"] = "null"
         map["Integer"] = "number"
         map["Any"] = "any"

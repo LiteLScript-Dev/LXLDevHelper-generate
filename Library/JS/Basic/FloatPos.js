@@ -1,31 +1,31 @@
 /**
- * 馃幆 鍧愭爣瀵硅薄
-澶氱敤鏉ヨ〃绀哄疄浣撳潗鏍囩瓑鐢ㄦ棤娉曠敤鏁存暟琛ㄧず鐨勪綅缃�
+ * 🎯 坐标对象
+多用来表示实体坐标等用无法用整数表示的位置
  */ 
 class FloatPos {
   
 /**
- * x 鍧愭爣
+ * x 坐标
  * @type Float
  */ 
  x;
 /**
- * y 鍧愭爣
+ * y 坐标
  * @type Float
  */ 
  y;
 /**
- * z 鍧愭爣
+ * z 坐标
  * @type Float
  */ 
  z;
 /**
- * 缁村害鏂囧瓧鍚�
+ * 维度文字名
  * @type string
  */ 
  dim;
 /**
- * 缁村害ID
+ * 维度ID
  * @type number
  */ 
  dimid;
