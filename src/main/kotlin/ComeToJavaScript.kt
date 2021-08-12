@@ -1,3 +1,5 @@
+import com.google.gson.Gson
+
 class ComeToJavaScript constructor(className: String) {
     private val classname: String = className
     private var description: String = ""
@@ -24,6 +26,7 @@ class ComeToJavaScript constructor(className: String) {
         val tem = JSTemplate.getSFunction(function, description, params, paramList, type, returnDesc)
         staticFunctions.add(tem)
     }
+
     fun addDynamicFunction(
         function: String,
         description: String,
@@ -55,28 +58,45 @@ class JSFunctionParams {
     private var staticParams = mutableListOf<String>()
     private var staticParamList = mutableListOf<String>()
     fun addParam(param: String, type: String, paramDesc: String) {
-        val tem = JSTemplate.getFunctionParam(param, type, paramDesc)
-        this.staticParams.add(tem)
-        this.staticParamList.add(param)
-    }
-
-    fun getParams(): String {
-        var field = "\n"
-        this.staticParams.forEach { it ->
-            field += it
-        }
-        return field
-    }
-
-    fun getParamList(): String {
-        var field = ""
-        this.staticParamList.forEach { it ->
-            if (field == "") {
-                field = it
-            } else {
-                field = "$field,$it"
+        if (type.contains("Function@")) {
+            val msg = type.substring("Function@".length)
+            val json = Gson().fromJson(msg, NoneFunction::class.java)
+            var field = ""
+            json.func.params.forEach { it ->
+                var tem = "${it.paramName}:${it.paramType}"
+                if (field == "") {
+                    field = tem
+                } else {
+                    field = "$field,$tem"
+                }
+            }
+            val tem = JSTemplate.getFunctionParam(param, "($field)", paramDesc)
+            this.staticParams.add(tem)
+            this.staticParamList.add(param)
+        }else{
+                val tem = JSTemplate.getFunctionParam(param, type, paramDesc)
+                this.staticParams.add(tem)
+                this.staticParamList.add(param)
             }
         }
-        return field
+
+        fun getParams(): String {
+            var field = "\n"
+            this.staticParams.forEach { it ->
+                field += it
+            }
+            return field
+        }
+
+        fun getParamList(): String {
+            var field = ""
+            this.staticParamList.forEach { it ->
+                if (field == "") {
+                    field = it
+                } else {
+                    field = "$field,$it"
+                }
+            }
+            return field
+        }
     }
-}

@@ -1,3 +1,5 @@
+import com.google.gson.Gson
+
 class ComeToLua constructor(className: String) {
     private val classname: String = className
     private var description: String = ""
@@ -13,15 +15,43 @@ class ComeToLua constructor(className: String) {
         this.staticValues.add(tem)
     }
 
-    fun addStaticFunction(function: String, description: String, params: String,paramList:String ,type: String, returnDesc: String) {
-        val desc = description.replace("\n","\n---")
-        val tem = LuaTemplate.getFunction("$classname.$function", desc, params, paramList, type, returnDesc.replace("\n","\n---"))
+    fun addStaticFunction(
+        function: String,
+        description: String,
+        params: String,
+        paramList: String,
+        type: String,
+        returnDesc: String
+    ) {
+        val desc = description.replace("\n", "\n---")
+        val tem = LuaTemplate.getFunction(
+            "$classname.$function",
+            desc,
+            params,
+            paramList,
+            type,
+            returnDesc.replace("\n", "\n---")
+        )
         staticFunctions.add(tem)
     }
 
-    fun addDynamicFunction(function: String, description: String, params: String,paramList:String ,type: String, returnDesc: String) {
-        val desc = description.replace("\n","\n---")
-        val tem = LuaTemplate.getFunction("$classname:$function", desc, params, paramList, type, returnDesc.replace("\n","\n---"))
+    fun addDynamicFunction(
+        function: String,
+        description: String,
+        params: String,
+        paramList: String,
+        type: String,
+        returnDesc: String
+    ) {
+        val desc = description.replace("\n", "\n---")
+        val tem = LuaTemplate.getFunction(
+            "$classname:$function",
+            desc,
+            params,
+            paramList,
+            type,
+            returnDesc.replace("\n", "\n---")
+        )
         staticFunctions.add(tem)
     }
 
@@ -33,20 +63,41 @@ class ComeToLua constructor(className: String) {
         val base = LuaTemplate.getClassBase(this.classname, field, this.description)
         var func = "\n"
         this.staticFunctions.forEach { it ->
-            func = func +"\n\n"+ it
+            func = func + "\n\n" + it
         }
-        return base+func
+        return base + func
     }
 }
 
 class LuaFunctionParams {
     private var staticParams = mutableListOf<String>()
     private var staticParamList = mutableListOf<String>()
-    fun addParam(param: String, type: String, paramDesc: String){
-        val tem = LuaTemplate.getFunctionParam(param, type, paramDesc)
-        this.staticParams.add(tem)
-        this.staticParamList.add(param)
+    fun addParam(param: String, type: String, paramDesc: String, Optional: Boolean) {
+        if (type.contains("Function@")) {
+            val msg = type.substring("Function@".length)
+            val json = Gson().fromJson(msg, NoneFunction::class.java)
+            var field = ""
+            json.func.params.forEach { it ->
+                var tem = "${it.paramName}:${it.paramType}"
+                if (field == "") {
+                    field = tem
+                } else {
+                    field = "$field,$tem"
+                }
+            }
+            val tem = LuaTemplate.getNoneFunctionParam(param, field, json.func.returnType, paramDesc);
+        } else {
+            var tem = ""
+            if (Optional) {
+                tem = LuaTemplate.getFunctionParam("$param?", type, paramDesc)
+            } else {
+                tem = LuaTemplate.getFunctionParam(param, type, paramDesc)
+            }
+            this.staticParams.add(tem)
+            this.staticParamList.add(param)
+        }
     }
+
     fun getParams(): String {
         var field = "\n"
         this.staticParams.forEach { it ->
@@ -54,14 +105,15 @@ class LuaFunctionParams {
         }
         return field
     }
+
     fun getParamList(): String {
         var field = ""
         this.staticParamList.forEach { it ->
-            if(field=="") {
+            if (field == "") {
                 field = it
             } else {
-                    field = "$field,$it"
-                }
+                field = "$field,$it"
+            }
         }
         return field
     }

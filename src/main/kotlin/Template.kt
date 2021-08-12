@@ -10,6 +10,9 @@ object LuaTemplate {
     fun getFunctionParam(param: String, type: String, paramDesc: String): String {
         return "---@param $param $type $paramDesc\n"
     }
+    fun getNoneFunctionParam(param: String, type: String, returnType:String,paramDesc: String): String {
+        return "---@param $param fun($type):$returnType $paramDesc\n"
+    }
 
     fun getFunction(
         function: String,

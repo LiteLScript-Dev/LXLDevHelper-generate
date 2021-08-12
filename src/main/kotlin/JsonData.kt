@@ -1,8 +1,6 @@
 
 import com.google.gson.annotations.SerializedName
 data class JsonData(
-    @SerializedName("CurrentClassHasSet")
-    val currentClassHasSet: Boolean,
     @SerializedName("DirCollection")
     val dirCollection: List<DirCollection>
 )
@@ -40,8 +38,6 @@ data class AllFunc(
     val params: List<Param>,
     @SerializedName("ReturnDescription")
     val returnDescription: String,
-    @SerializedName("ReturnName")
-    val returnName: String,
     @SerializedName("ReturnType")
     val returnType: String
 )
@@ -69,3 +65,16 @@ data class Param(
     @SerializedName("ParamType")
     val paramType: String
 )
+data class NoneFunction(
+    @SerializedName("Func")
+    val func: Func
+)
+
+data class Func(
+    @SerializedName("Params")
+    val params: List<Param>,
+    @SerializedName("ReturnType")
+    val returnType: String
+)
+
+

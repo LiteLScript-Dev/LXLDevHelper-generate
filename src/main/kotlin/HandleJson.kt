@@ -10,7 +10,7 @@ class HandleJson {
         luaClass.allFunc.forEach { it ->
             val param = LuaFunctionParams()
             it.params.forEach { its ->
-                param.addParam(its.paramName, its.paramType, its.description)
+                param.addParam(its.paramName, its.paramType, its.description,its.optional)
             }
             if (it.isStatic) {
                 lua.addStaticFunction(
@@ -76,5 +76,19 @@ class HandleJson {
         }
 
         return js.getData()
+    }
+    fun HandleType(data:String):String{
+        val map = mutableMapOf<String,String>()
+        map["String"] = "string"
+        map["Boolean"] = "boolean"
+        map["Array"] = "{}"
+        map["Null"] = "null"
+        map["Integer"] = "number"
+        var datas = data
+        map.forEach { (t, u) ->
+           datas = datas.replace(t,u)
+        }
+        print("Successfully processed data type")
+        return datas
     }
 }
