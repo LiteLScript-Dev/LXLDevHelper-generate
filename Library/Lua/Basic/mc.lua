@@ -94,7 +94,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onPreJoin" 鐜╁寮�濮嬭繛鎺ユ湇鍔″櫒
+---@param event ""onPreJoin"" 鐜╁寮�濮嬭繛鎺ユ湇鍔″櫒
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -109,7 +109,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onJoin" 鐜╁杩涘叆娓告垙锛堝姞杞戒笘鐣屽畬鎴愶級
+---@param event ""onJoin"" 鐜╁杩涘叆娓告垙锛堝姞杞戒笘鐣屽畬鎴愶級
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -124,7 +124,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onLeft" 鐜╁绂诲紑娓告垙
+---@param event ""onLeft"" 鐜╁绂诲紑娓告垙
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -139,7 +139,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onRespawn" 鐜╁閲嶇敓
+---@param event ""onRespawn"" 鐜╁閲嶇敓
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -154,7 +154,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onPlayerDie" 鐜╁姝讳骸
+---@param event ""onPlayerDie"" 鐜╁姝讳骸
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -169,7 +169,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onPlayerCmd" 鐜╁鎵ц鍛戒护
+---@param event ""onPlayerCmd"" 鐜╁鎵ц鍛戒护
 ---@param callback fun(player:Player,cmd:string):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -184,7 +184,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onChat" 鐜╁鍙戦�佽亰澶╀俊鎭�
+---@param event ""onChat"" 鐜╁鍙戦�佽亰澶╀俊鎭�
 ---@param callback fun(player:Player,msg:string):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -199,7 +199,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onChangeDim" 鐜╁鍒囨崲缁村害
+---@param event ""onChangeDim"" 鐜╁鍒囨崲缁村害
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -214,7 +214,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onJump" 鐜╁璺宠穬
+---@param event ""onJump"" 鐜╁璺宠穬
 ---@param callback fun(player:Player): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -229,7 +229,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onSneak" 鐜╁鍒囨崲娼滆鐘舵��
+---@param event ""onSneak"" 鐜╁鍒囨崲娼滆鐘舵��
 ---@param callback fun(player:Player,isSneaking:boolean): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -244,7 +244,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onAttack" 鐜╁鏀诲嚮瀹炰綋
+---@param event ""onAttack"" 鐜╁鏀诲嚮瀹炰綋
 ---@param callback fun(player:Player,entity:Entity):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -259,7 +259,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onUseItem" 鐜╁浣跨敤鐗╁搧
+---@param event ""onUseItem"" 鐜╁浣跨敤鐗╁搧
 ---@param callback fun(player:Player,item:Item):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -274,7 +274,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onUseItemOn" 鐜╁瀵规柟鍧椾娇鐢ㄧ墿鍝侊紙鐐瑰嚮鍙抽敭锛�
+---@param event ""onUseItemOn"" 鐜╁瀵规柟鍧椾娇鐢ㄧ墿鍝侊紙鐐瑰嚮鍙抽敭锛�
 ---@param callback fun(player:Player,item:Item,block:Block):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -289,7 +289,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onTakeItem" 鐜╁鎹¤捣鐗╁搧
+---@param event ""onTakeItem"" 鐜╁鎹¤捣鐗╁搧
 ---@param callback fun(player:Player,entity:Entity):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -304,7 +304,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onDropItem" 鐜╁涓㈠嚭鐗╁搧
+---@param event ""onDropItem"" 鐜╁涓㈠嚭鐗╁搧
 ---@param callback fun(player:Player,item:Item):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -319,7 +319,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onEat" 鐜╁椋熺敤椋熺墿
+---@param event ""onEat"" 鐜╁椋熺敤椋熺墿
 ---@param callback fun(player:Player,item:Item): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -334,7 +334,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onStartDestroyBlock" 鐜╁寮�濮嬬牬鍧忔柟鍧� / 鐐瑰嚮宸﹂敭
+---@param event ""onStartDestroyBlock"" 鐜╁寮�濮嬬牬鍧忔柟鍧� / 鐐瑰嚮宸﹂敭
 ---@param callback fun(player:Player,block:Block): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -349,7 +349,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onDestroyBlock" 鐜╁鐮村潖鏂瑰潡瀹屾垚
+---@param event ""onDestroyBlock"" 鐜╁鐮村潖鏂瑰潡瀹屾垚
 ---@param callback fun(player:Player,block:Block):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -364,7 +364,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onPlaceBlock" 鐜╁鏀剧疆鏂瑰潡
+---@param event ""onPlaceBlock"" 鐜╁鏀剧疆鏂瑰潡
 ---@param callback fun(player:Player,block:Block):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -379,7 +379,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onOpenContainer" 鐜╁鎵撳紑瀹瑰櫒鏂瑰潡
+---@param event ""onOpenContainer"" 鐜╁鎵撳紑瀹瑰櫒鏂瑰潡
 ---@param callback fun(player:Player,block:Block):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -394,7 +394,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onCloseContainer" 鐜╁鍏抽棴瀹瑰櫒鏂瑰潡
+---@param event ""onCloseContainer"" 鐜╁鍏抽棴瀹瑰櫒鏂瑰潡
 ---@param callback fun(player:Player,block:Block):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -409,7 +409,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onInventoryChange" 鐜╁鐗╁搧鏍忓彉鍖�
+---@param event ""onInventoryChange"" 鐜╁鐗╁搧鏍忓彉鍖�
 ---@param callback fun(player:Player,slotNum:number,oldItem:Item,newItem:Item): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -424,7 +424,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onMove" 鐜╁绉诲姩
+---@param event ""onMove"" 鐜╁绉诲姩
 ---@param callback fun(player:Player,pos:FloatPos): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -439,7 +439,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onSetArmor" 鐜╁鏀瑰彉鐩旂敳鏍�
+---@param event ""onSetArmor"" 鐜╁鏀瑰彉鐩旂敳鏍�
 ---@param callback fun(player:Player,slotNum:number,item:Item): 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -454,7 +454,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onUseRespawnAnchor" 鐜╁浣跨敤閲嶇敓閿�
+---@param event ""onUseRespawnAnchor"" 鐜╁浣跨敤閲嶇敓閿�
 ---@param callback fun(player:Player,pos:IntPos):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
@@ -469,7 +469,7 @@ end
 ---閬垮紑璇尯
 ---鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 ---涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
----@param event "onOpenContainerScreen" 鐜╁鎵撳紑瀹瑰櫒绫籊UI
+---@param event ""onOpenContainerScreen"" 鐜╁鎵撳紑瀹瑰櫒绫籊UI
 ---@param callback fun(player:Player):boolean 浜嬩欢鍥炶皟
 ---@return boolean 鏄惁娣诲姞鎴愬姛
 function mc.listen(event,callback)
