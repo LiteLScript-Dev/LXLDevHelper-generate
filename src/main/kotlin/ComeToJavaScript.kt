@@ -66,11 +66,11 @@ class JSFunctionParams {
             val json = Gson().fromJson(msg, NoneFunction::class.java)
             var field = ""
             json.func.params.forEach { it ->
-                var tem = "${it.paramName}:${it.paramType}"
-                if (field == "") {
-                    field = tem
+                val tem = "${it.paramName}:${it.paramType}"
+                field = if (field == "") {
+                    tem
                 } else {
-                    field = "$field,$tem"
+                    "$field,$tem"
                 }
             }
             val tem = JSTemplate.getFunctionParam(param, "($field)", paramDesc)

@@ -55,6 +55,26 @@ class ComeToLua constructor(className: String) {
         staticFunctions.add(tem)
     }
 
+    fun addFunction(
+        function: String,
+        description: String,
+        params: String,
+        paramList: String,
+        type: String,
+        returnDesc: String
+    ) {
+        val desc = description.replace("\n", "\n---")
+        val tem = LuaTemplate.getFunction(
+            function,
+            desc,
+            params,
+            paramList,
+            type,
+            returnDesc.replace("\n", "\n---")
+        )
+        staticFunctions.add(tem)
+    }
+
     fun getData(OnlyFunction: Boolean): String {
         var field = "\n"
         this.staticValues.forEach { it ->
@@ -90,16 +110,18 @@ class LuaFunctionParams {
                 }
             }
             val tem = LuaTemplate.getNoneFunctionParam(param, field, json.func.returnType, paramDesc);
+            this.staticParams.add(tem)
+            this.staticParamList.add(param)
         } else {
-            var tem = ""
-            if (Optional) {
-                tem = LuaTemplate.getFunctionParam("$param?", type, paramDesc)
+            val tem: String = if (Optional) {
+                LuaTemplate.getFunctionParam("$param?", type, paramDesc)
             } else {
-                tem = LuaTemplate.getFunctionParam(param, type, paramDesc)
+                LuaTemplate.getFunctionParam(param, type, paramDesc)
             }
             this.staticParams.add(tem)
             this.staticParamList.add(param)
         }
+
     }
 
     fun getParams(): String {

@@ -12,8 +12,8 @@ class HandleJson {
             it.params.forEach { its ->
                 param.addParam(its.paramName, its.paramType, its.description, its.optional)
             }
-            if (it.isStatic) {
-                lua.addStaticFunction(
+            if (luaClass.className == "Global") {
+                lua.addFunction(
                     it.funcName,
                     it.description,
                     param.getParams(),
@@ -22,14 +22,25 @@ class HandleJson {
                     it.returnDescription
                 )
             } else {
-                lua.addDynamicFunction(
-                    it.funcName,
-                    it.description,
-                    param.getParams(),
-                    param.getParamList(),
-                    it.returnType,
-                    it.returnDescription
-                )
+                if (it.isStatic) {
+                    lua.addStaticFunction(
+                        it.funcName,
+                        it.description,
+                        param.getParams(),
+                        param.getParamList(),
+                        it.returnType,
+                        it.returnDescription
+                    )
+                } else {
+                    lua.addDynamicFunction(
+                        it.funcName,
+                        it.description,
+                        param.getParams(),
+                        param.getParamList(),
+                        it.returnType,
+                        it.returnDescription
+                    )
+                }
             }
         }
         luaClass.allProperty.forEach { it ->
@@ -52,7 +63,7 @@ class HandleJson {
             it.params.forEach { _it ->
                 param.addParam(_it.paramName, _it.paramType, _it.description)
             }
-            if (it.isStatic) {
+            if (jsClass.className == "Global") {
                 js.addStaticFunction(
                     it.funcName,
                     it.description,
@@ -62,15 +73,26 @@ class HandleJson {
                     it.returnDescription
                 )
             } else {
-                js.addDynamicFunction(
-                    it.funcName,
-                    it.description,
-                    param.getParams(),
-                    param.getParamList(),
-                    it.returnType,
-                    it.returnDescription
-                )
+                if (it.isStatic) {
+                    js.addStaticFunction(
+                        it.funcName,
+                        it.description,
+                        param.getParams(),
+                        param.getParamList(),
+                        it.returnType,
+                        it.returnDescription
+                    )
+                } else {
+                    js.addDynamicFunction(
+                        it.funcName,
+                        it.description,
+                        param.getParams(),
+                        param.getParamList(),
+                        it.returnType,
+                        it.returnDescription
+                    )
 
+                }
             }
         }
 
@@ -93,14 +115,15 @@ class HandleJson {
         map["Array"] = "{}"
         map["Null"] = "nil"
         map["Integer"] = "number"
+        map["Any"] = "any"
         var datas = data
         map.forEach { (t, u) ->
             datas = datas.replace(t, u)
         }
-        print("Successfully processed data type")
         return datas
 
     }
+
     fun HandleJsType(data: String): String {
         val map = mutableMapOf<String, String>()
         map["String"] = "string"
@@ -108,11 +131,11 @@ class HandleJson {
         map["Array"] = "{}"
         map["Null"] = "null"
         map["Integer"] = "number"
+        map["Any"] = "any"
         var datas = data
         map.forEach { (t, u) ->
             datas = datas.replace(t, u)
         }
-        print("Successfully processed data type")
         return datas
     }
 }
