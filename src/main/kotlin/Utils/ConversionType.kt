@@ -9,6 +9,7 @@ class ConversionType {
         map["Null"] = "nil"
         map["Integer"] = "number"
         map["Any"] = "any"
+        map["Void"] = "function"
         var datas = data
         map.forEach { (t, u) ->
             datas = datas.replace(t, u)
@@ -23,6 +24,7 @@ class ConversionType {
         map["Null"] = "null"
         map["Integer"] = "number"
         map["Any"] = "any"
+        map["Void"] = "function"
         var datas = data
         map.forEach { (t, u) ->
             datas = datas.replace(t, u)

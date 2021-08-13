@@ -40,4 +40,10 @@ object LuaHandleType {
             LuaTemplate.getFunctionParam(param, "$msg[]", paramDesc), param
         )
     }
+
+    fun handleQuotes(param: String, type: String, paramDesc: String, optional: Boolean): ReturnParams {
+        return ReturnParams(
+            LuaTemplate.getFunctionParam(param, type.replace("\"", "\"\""), paramDesc), param
+        )
+    }
 }

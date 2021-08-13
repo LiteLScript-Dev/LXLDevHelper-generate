@@ -111,7 +111,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onPreJoin"} event 鐜╁寮�濮嬭繛鎺ユ湇鍔″櫒
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -127,7 +127,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onJoin"} event 鐜╁杩涘叆娓告垙锛堝姞杞戒笘鐣屽畬鎴愶級
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -143,7 +143,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onLeft"} event 鐜╁绂诲紑娓告垙
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -159,7 +159,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onRespawn"} event 鐜╁閲嶇敓
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -175,7 +175,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onPlayerDie"} event 鐜╁姝讳骸
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -223,7 +223,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onChangeDim"} event 鐜╁鍒囨崲缁村害
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -239,7 +239,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onJump"} event 鐜╁璺宠穬
- * @param {(player:Player)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -255,7 +255,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onSneak"} event 鐜╁鍒囨崲娼滆鐘舵��
- * @param {(player:Player,isSneaking:boolean)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,isSneaking:boolean)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -351,7 +351,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onEat"} event 鐜╁椋熺敤椋熺墿
- * @param {(player:Player,item:Item)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,item:Item)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -367,7 +367,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onStartDestroyBlock"} event 鐜╁寮�濮嬬牬鍧忔柟鍧� / 鐐瑰嚮宸﹂敭
- * @param {(player:Player,block:Block)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,block:Block)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -447,7 +447,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onInventoryChange"} event 鐜╁鐗╁搧鏍忓彉鍖�
- * @param {(player:Player,slotNum:number,oldItem:Item,newItem:Item)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,slotNum:number,oldItem:Item,newItem:Item)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -463,7 +463,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onMove"} event 鐜╁绉诲姩
- * @param {(player:Player,pos:FloatPos)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,pos:FloatPos)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
@@ -479,7 +479,7 @@ class mc {
 鏈変簺鏃跺�欙紝鍦ㄦ煇浜涗簨浠剁洃鍚唴閮ㄨ皟鐢ㄧ壒瀹氱殑API浼氶�犳垚姝诲惊鐜穿鏈嶏紝璇峰姟蹇呴伩鍏嶈繖浜涙儏鍐电殑鍙戠敓
 涓句緥锛氬湪onConsoleCmd浜嬩欢鐩戝惉涓皟鐢╩c.runcmd(Ex)绯诲垪鍑芥暟鎵ц鍚庡彴鎸囦护锛屽皢瀵艰嚧姝诲惊鐜�
  * @param {"onSetArmor"} event 鐜╁鏀瑰彉鐩旂敳鏍�
- * @param {(player:Player,slotNum:number,item:Item)} callback 浜嬩欢鍥炶皟
+ * @param {(player:Player,slotNum:number,item:Item)Void} callback 浜嬩欢鍥炶皟
  * @returns {boolean} 鏄惁娣诲姞鎴愬姛
  */
  static listen(event,callback)
