@@ -18,6 +18,7 @@ class Generateble {
         log.info("Making Dir $luaUrl")
 
         dirListLua.dirCollection.forEach { it ->
+
             val luaDirUrl = luaUrl + it.dirName
             val jsDirUrl = jsUrl + it.dirName
 
