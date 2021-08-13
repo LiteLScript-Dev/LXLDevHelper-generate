@@ -1,10 +1,12 @@
-import com.google.gson.Gson
-import java.util.*
+import JavaScript.JsFunctionParams
+import JavaScript.JsGenerate
+import Lua.LuaGenerate
+import Lua.LuaFunctionParams
 
-class HandleJson {
+class HandleClass {
 
     fun getLuaCode(luaClass: AllClass): String {
-        val lua = ComeToLua(luaClass.className)
+        val lua = LuaGenerate(luaClass.className)
         lua.setDescription(luaClass.description)
 
         luaClass.allFunc.forEach { it ->
@@ -13,7 +15,7 @@ class HandleJson {
                 param.addParam(its.paramName, its.paramType, its.description, its.optional)
             }
             if (luaClass.className == "Global") {
-                lua.addFunction(
+                lua.addGlobalFunction(
                     it.funcName,
                     it.description,
                     param.getParams(),
@@ -47,21 +49,21 @@ class HandleJson {
             lua.addStaticValue(it.propertyName, it.propertyType, it.propertyType)
         }
         return if (luaClass.className == "Global") {
-            lua.getData(true)
+            lua.getContent(true)
         } else {
-            lua.getData(false)
+            lua.getContent(false)
         }
     }
 
 
     fun getJSCode(jsClass: AllClass): String {
-        val js = ComeToJavaScript(jsClass.className)
+        val js = JsGenerate(jsClass.className)
         js.setDescription(jsClass.description)
 
         jsClass.allFunc.forEach { it ->
-            val param = JSFunctionParams()
+            val param = JsFunctionParams()
             it.params.forEach { _it ->
-                param.addParam(_it.paramName, _it.paramType, _it.description)
+                param.addParam(_it.paramName, _it.paramType, _it.description,_it.optional)
             }
             if (jsClass.className == "Global") {
                 js.addStaticFunction(
@@ -102,40 +104,13 @@ class HandleJson {
         }
 
         return if (jsClass.className == "Global") {
-            js.getData(true)
+            js.getContent(true)
         } else {
-            js.getData(false)
+            js.getContent(false)
         }
     }
 
-    fun HandleLuaType(data: String): String {
-        val map = mutableMapOf<String, String>()
-        map["String"] = "string"
-        map["Boolean"] = "boolean"
-        map["\"Array\""] = "\"{}\""
-        map["Null"] = "nil"
-        map["Integer"] = "number"
-        map["Any"] = "any"
-        var datas = data
-        map.forEach { (t, u) ->
-            datas = datas.replace(t, u)
-        }
-        return datas
 
-    }
 
-    fun HandleJsType(data: String): String {
-        val map = mutableMapOf<String, String>()
-        map["String"] = "string"
-        map["Boolean"] = "boolean"
-        map["\"Array\""] = "\"{}\""
-        map["Null"] = "null"
-        map["Integer"] = "number"
-        map["Any"] = "any"
-        var datas = data
-        map.forEach { (t, u) ->
-            datas = datas.replace(t, u)
-        }
-        return datas
-    }
+
 }

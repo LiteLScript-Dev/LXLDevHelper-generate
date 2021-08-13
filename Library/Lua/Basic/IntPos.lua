@@ -1,8 +1,8 @@
----🎯 坐标对象
-多用来表示方块坐标等用整数表示的位置\n---@class IntPos 
----@field x number number
----@field y number number
----@field z number number
----@field dim string string
----@field dimid number number
+---馃幆 鍧愭爣瀵硅薄
+澶氱敤鏉ヨ〃绀烘柟鍧楀潗鏍囩瓑鐢ㄦ暣鏁拌〃绀虹殑浣嶇疆\n---@class IntPos 
+---@field x Integer Integer
+---@field y Integer Integer
+---@field z Integer Integer
+---@field dim String String
+---@field dimid Integer Integer
  IntPos = {}

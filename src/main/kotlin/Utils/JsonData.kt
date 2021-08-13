@@ -65,6 +65,9 @@ data class Param(
     @SerializedName("ParamType")
     val paramType: String
 )
+
+data class ReturnParams(var params:String, var list:String)
+
 data class NoneFunction(
     @SerializedName("Func")
     val func: Func

@@ -1,32 +1,32 @@
 /**
- * 🎯 坐标对象
-多用来表示实体坐标等用无法用整数表示的位置
+ * 馃幆 鍧愭爣瀵硅薄
+澶氱敤鏉ヨ〃绀哄疄浣撳潗鏍囩瓑鐢ㄦ棤娉曠敤鏁存暟琛ㄧず鐨勪綅缃�
  */ 
 class FloatPos {
   
 /**
- * x 坐标
+ * x 鍧愭爣
  * @type Float
  */ 
  x;
 /**
- * y 坐标
+ * y 鍧愭爣
  * @type Float
  */ 
  y;
 /**
- * z 坐标
+ * z 鍧愭爣
  * @type Float
  */ 
  z;
 /**
- * 维度文字名
- * @type string
+ * 缁村害鏂囧瓧鍚�
+ * @type String
  */ 
  dim;
 /**
- * 维度ID
- * @type number
+ * 缁村害ID
+ * @type Integer
  */ 
  dimid;
   

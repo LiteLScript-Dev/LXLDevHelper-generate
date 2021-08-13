@@ -1,12 +1,10 @@
-import com.google.gson.Gson
 import java.io.BufferedReader
-import java.io.File
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-public class Runner{
-     public fun main() {
+class StartRunner{
+     fun main() {
         println(
             """ __      ___   ___  __       _______   ___________    ____       __    __   _______  __      .______    _______ .______      
 |  |     \  \ /  / |  |     |       \ |   ____\   \  /   /      |  |  |  | |   ____||  |     |   _  \  |   ____||   _  \     
@@ -27,7 +25,7 @@ public class Runner{
                                                                                    """
         )
 
-        val repoUri = "https://github.91chifun.workers.dev/https://github.com//LiteLDev-LXL/LXLDevHelper-DocSrc/releases/download/v0.build0/raw.json"
+        val repoUri = "https://github.com/LiteLDev-LXL/LXLDevHelper-DocSrc/releases/download/v0.build0/raw.json"
         println("Requesting repo address $repoUri")
         Thread {
             var connection: HttpURLConnection? = null
@@ -47,7 +45,7 @@ public class Runner{
                 response.append(allText)
                 println("Successfully obtained repo data")
                 val data = response.toString()
-                ExportGenerate().run(data)
+                Generateble().run(data)
 
             } catch (ex: Exception) {
                 ex.printStackTrace()

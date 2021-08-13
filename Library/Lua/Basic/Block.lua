@@ -1,25 +1,24 @@
----方块对象\n---@class Block 
----@field name string string
----@field type string string
----@field id number number
+---鏂瑰潡瀵硅薄\n---@class Block 
+---@field name String String
+---@field type String String
+---@field id Integer Integer
 ---@field pos IntPos IntPos
  Block = {}
 
-
----获取方块对应的NBT对象
----@return NbtCompound 方块的NBT对象
+---鑾峰彇鏂瑰潡瀵瑰簲鐨凬BT瀵硅薄
+---@return NbtCompound 鏂瑰潡鐨凬BT瀵硅薄
 function Block:getNbt()
 end
 
----写入方块对应的NBT对象
----@param nbt NbtCompound NBT对象
----@return boolean 是否成功写入
+---鍐欏叆鏂瑰潡瀵瑰簲鐨凬BT瀵硅薄
+---@param nbt NbtCompound NBT瀵硅薄
+---@return boolean 鏄惁鎴愬姛鍐欏叆
 function Block:setNbt(nbt)
 end
 
----获取方块的BlockState
----方便函数，协助解析方块BlockState并转换为Object，方便读取与解析
----等价于脚本执行block.getNbt().getTag("states").toObject()
----@return Object 方块的BlockState
+---鑾峰彇鏂瑰潡鐨凚lockState
+---鏂逛究鍑芥暟锛屽崗鍔╄В鏋愭柟鍧桞lockState骞惰浆鎹负Object锛屾柟渚胯鍙栦笌瑙ｆ瀽
+---绛変环浜庤剼鏈墽琛宐lock.getNbt().getTag("states").toObject()
+---@return Object 鏂瑰潡鐨凚lockState
 function Block:getBlockState()
 end
