@@ -1,5 +1,6 @@
 package JavaScript
 
+import AllClass
 import Utils.ConversionType
 
 class JsGenerate constructor(className: String) {
@@ -51,10 +52,14 @@ class JsGenerate constructor(className: String) {
             func = func + "\n\n" + it
         }
         return if (OnlyFunction) {
-            field+"\n"+ ConversionType().Js(func)
+            field + "\n" + ConversionType().Js(func)
         } else {
             JsTemplate.getClass(this.classname, field, this.description, ConversionType().Js(func))
         }
+    }
+
+    fun makeClass( functions: String, classInfo: AllClass): String {
+        return JsTemplate.getClass(classInfo.className, "", classInfo.description, ConversionType().Js(functions))
     }
 
 }

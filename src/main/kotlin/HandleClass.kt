@@ -1,3 +1,4 @@
+import Data.ClassData
 import JavaScript.JsFunctionParams
 import JavaScript.JsGenerate
 import Lua.LuaGenerate
@@ -63,7 +64,7 @@ class HandleClass {
         jsClass.allFunc.forEach { it ->
             val param = JsFunctionParams()
             it.params.forEach { _it ->
-                param.addParam(_it.paramName, _it.paramType, _it.description,_it.optional)
+                param.addParam(_it.paramName, _it.paramType, _it.description, _it.optional)
             }
             if (jsClass.className == "Global") {
                 js.addStaticFunction(
@@ -103,14 +104,18 @@ class HandleClass {
             js.addStaticValue(it.propertyName, it.propertyType, it.description)
         }
 
-        return if (jsClass.className == "Global") {
-            js.getContent(true)
-        } else {
-            js.getContent(false)
+        return when (jsClass.className) {
+            "Global" -> js.getContent(true)
+            "mc" -> {
+                ClassData.classInfo = jsClass
+                ClassData.classCache = ClassData.classCache + js.getContent(true)
+                return "no"
+            }
+            else -> {
+                js.getContent(false)
+            }
         }
+
+
     }
-
-
-
-
 }
