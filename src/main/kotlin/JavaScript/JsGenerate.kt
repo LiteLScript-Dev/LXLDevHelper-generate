@@ -54,7 +54,7 @@ class JsGenerate constructor(className: String) {
         staticFunctions.add(tem)
     }
 
-    fun getContent(OnlyFunction: Boolean): String {
+    fun getContent(OnlyFunction: Boolean, className: String): String {
         var field = "\n"
         this.staticValues.forEach { it ->
             field += it + "\n"
@@ -64,7 +64,11 @@ class JsGenerate constructor(className: String) {
             func = func + "\n\n" + it
         }
         return if (OnlyFunction) {
-            field + "\n" + ConversionType().Js(func.replace("static", "function"))
+            if (className == "Global") {
+                field + "\n" + ConversionType().Js(func.replace("static", "function"))
+            } else {
+                field + "\n" + ConversionType().Js(func)
+            }
         } else {
             JsTemplate.getClass(this.classname, field, this.description, ConversionType().Js(func))
         }

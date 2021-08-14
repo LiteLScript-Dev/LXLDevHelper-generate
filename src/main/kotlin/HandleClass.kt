@@ -105,14 +105,14 @@ class HandleClass {
         }
 
         return when (jsClass.className) {
-            "Global" -> js.getContent(true)
+            "Global" -> js.getContent(true,jsClass.className)
             "mc" -> {
                 ClassData.classInfo = jsClass
-                ClassData.classCache = ClassData.classCache + js.getContent(true)
+                ClassData.classCache = ClassData.classCache + js.getContent(true,jsClass.className)
                 return "no"
             }
             else -> {
-                js.getContent(false)
+                js.getContent(false,jsClass.className)
             }
         }
 
