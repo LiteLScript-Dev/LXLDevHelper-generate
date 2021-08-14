@@ -52,7 +52,7 @@ class JsGenerate constructor(className: String) {
             func = func + "\n\n" + it
         }
         return if (OnlyFunction) {
-            field + "\n" + ConversionType().Js(func)
+            field + "\n" + ConversionType().Js(func.replace("static","function"))
         } else {
             JsTemplate.getClass(this.classname, field, this.description, ConversionType().Js(func))
         }
