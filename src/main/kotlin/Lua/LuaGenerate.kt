@@ -30,7 +30,7 @@ class LuaGenerate constructor(className: String) {
             desc,
             params,
             paramList,
-            type,
+            LuaHandleParam().get("", type, "", Optional = false, isReturn = true).params,
             returnDesc.replace("\n", "\n---")
         )
         staticFunctions.add(tem)
@@ -49,7 +49,7 @@ class LuaGenerate constructor(className: String) {
             desc,
             params,
             paramList,
-            type,
+            LuaHandleParam().get("", type, "", Optional = false, isReturn = true).params,
             returnDesc.replace("\n", "\n---")
         )
         staticFunctions.add(tem)
@@ -68,7 +68,7 @@ class LuaGenerate constructor(className: String) {
             desc,
             params,
             paramList,
-            type,
+            LuaHandleParam().get("", type, "", Optional = false, isReturn = true).params,
             returnDesc.replace("\n", "\n---")
         )
         staticFunctions.add(tem)

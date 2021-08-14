@@ -7,7 +7,7 @@ class JsFunctionParams {
     private var staticParams = mutableListOf<String>()
     private var staticParamList = mutableListOf<String>()
     fun addParam(param: String, type: String, paramDesc: String,Optional:Boolean) {
-        val tem = JsHandleParam().get(param, type, paramDesc, Optional)
+        val tem = JsHandleParam().get(param, type, paramDesc, Optional,false)
         this.staticParams.add(tem.params)
         this.staticParamList.add(tem.list)
     }

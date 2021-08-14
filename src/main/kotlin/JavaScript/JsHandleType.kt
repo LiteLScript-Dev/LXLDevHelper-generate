@@ -6,7 +6,7 @@ import com.google.gson.Gson
 
 object JsHandleType {
 
-    fun handleFunction(param: String, type: String, paramDesc: String): ReturnParams {
+    fun handleFunction(isReturn: Boolean, param: String, type: String, paramDesc: String): ReturnParams {
         val msg = type.substring("Function@".length)
         val json = Gson().fromJson(msg, NoneFunction::class.java)
         var field = ""
@@ -19,7 +19,11 @@ object JsHandleType {
             }
         }
         return ReturnParams(
-            JsTemplate.getFunctionParam(param, "($field)${json.func.returnType}", paramDesc), param
+            if (isReturn) {
+                "($field)${json.func.returnType}"
+            } else {
+                JsTemplate.getFunctionParam(param, "($field)${json.func.returnType}", paramDesc)
+            }, param
         )
     }
 
@@ -30,10 +34,21 @@ object JsHandleType {
         )
     }
 
-    fun handleArray(param: String, type: String, paramDesc: String): ReturnParams {
+    fun handleArray(isReturn: Boolean, param: String, type: String, paramDesc: String): ReturnParams {
         val msg = type.substring("Array@".length)
-        return ReturnParams(
-            JsTemplate.getFunctionParam(param, "$msg[]", paramDesc), param
+        return ReturnParams( if (isReturn) {
+            "$msg[]"
+        }else{
+            JsTemplate.getFunctionParam(param, "$msg[]", paramDesc)}, param
+        )
+    }
+
+    fun handleKV(isReturn: Boolean, param: String, type: String, paramDesc: String): ReturnParams {
+        val msg = type.substring("Object@".length)
+        return ReturnParams( if (isReturn) {
+            "$msg[]"
+        }else{
+            JsTemplate.getFunctionParam(param, "$msg[]", paramDesc)}, param
         )
     }
 }

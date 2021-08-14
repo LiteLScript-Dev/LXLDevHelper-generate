@@ -26,7 +26,13 @@ class JsGenerate constructor(className: String) {
         type: String,
         returnDesc: String
     ) {
-        val tem = JsTemplate.getSFunction(function, description, params, paramList, type, returnDesc)
+        val tem = JsTemplate.getSFunction(
+            function, description, params, paramList, JsHandleParam().get(
+                "", type, "",
+                Optional = false,
+                isReturn = true
+            ).params, returnDesc
+        )
         staticFunctions.add(tem)
     }
 
@@ -38,7 +44,13 @@ class JsGenerate constructor(className: String) {
         type: String,
         returnDesc: String
     ) {
-        val tem = JsTemplate.getDFunction(function, description, params, paramList, type, returnDesc)
+        val tem = JsTemplate.getDFunction(
+            function, description, params, paramList, JsHandleParam().get(
+                "", type, "",
+                Optional = false,
+                isReturn = true
+            ).params, returnDesc
+        )
         staticFunctions.add(tem)
     }
 
@@ -52,13 +64,13 @@ class JsGenerate constructor(className: String) {
             func = func + "\n\n" + it
         }
         return if (OnlyFunction) {
-            field + "\n" + ConversionType().Js(func.replace("static","function"))
+            field + "\n" + ConversionType().Js(func.replace("static", "function"))
         } else {
             JsTemplate.getClass(this.classname, field, this.description, ConversionType().Js(func))
         }
     }
 
-    fun makeClass( functions: String, classInfo: AllClass): String {
+    fun makeClass(functions: String, classInfo: AllClass): String {
         return JsTemplate.getClass(classInfo.className, "", classInfo.description, ConversionType().Js(functions))
     }
 
