@@ -1,10 +1,11 @@
 import java.io.BufferedReader
+import java.io.File
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-class StartRunner{
-     fun main() {
+class StartRunner {
+    fun main() {
         println(
             """ __      ___   ___  __       _______   ___________    ____       __    __   _______  __      .______    _______ .______      
 |  |     \  \ /  / |  |     |       \ |   ____\   \  /   /      |  |  |  | |   ____||  |     |   _  \  |   ____||   _  \     
@@ -25,43 +26,14 @@ class StartRunner{
                                                                                    """
         )
 
-        val repoUri = "https://github.com/LiteLDev-LXL/LXLDevHelper-DocSrc/releases/download/v0.build0/raw.json"
-        println("Requesting repo address $repoUri")
         Thread {
-            var connection: HttpURLConnection? = null
-            var reader: BufferedReader? = null
-
             try {
-                val url = URL(repoUri)
-                connection = url.openConnection() as HttpURLConnection
-                connection.requestMethod = "GET"
-                connection.connectTimeout = 8000
-                connection.readTimeout = 20000
-
-                val inStream = connection.inputStream
-                reader = BufferedReader(InputStreamReader(inStream))
-                val response = StringBuilder()
-                val allText = reader.use(BufferedReader::readText)
-                response.append(allText)
+                val data = File("raw.json").readText()
                 println("Successfully obtained repo data")
-                val data = response.toString()
                 Generateble().run(data)
 
             } catch (ex: Exception) {
                 ex.printStackTrace()
-            } finally {
-
-                reader?.let {
-                    try {
-                        it.close()
-                    } catch (exInner: Exception) {
-                        println("Network abnormality occurred")
-                        exInner.printStackTrace()
-                    }
-                }
-
-                connection?.disconnect()
-
             }
         }.start()
     }
