@@ -70,7 +70,7 @@ object LuaHandleType {
     fun handleKV(isReturn: Boolean, param: String, type: String, paramDesc: String, optional: Boolean): ReturnParams {
         val msg = type.substring("Object@".length)
         return if (isReturn) {
-            ReturnParams("$msg[]", "")
+            ReturnParams("table$msg[]", "")
         } else {
             ReturnParams(
                 LuaTemplate.getFunctionParam(param, "table$msg", paramDesc), param

@@ -2,7 +2,8 @@ package Lua
 
 object LuaTemplate {
     fun getClassBase(className: String, field: String, description: String): String {
-        return """---$description\n---@class $className $field $className = {}"""
+        return """---$description
+            |---@class $className $field $className = {}""".trimMargin()
     }
 
     fun getStaticValue(name: String, type: String, description: String): String {
