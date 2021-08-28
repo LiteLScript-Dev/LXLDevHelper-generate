@@ -101,18 +101,22 @@ class HandleClass {
 
 
         jsClass.allProperty.forEach { it ->
-            js.addStaticValue(it.propertyName, it.propertyType, it.description)
+            if (it.isStatic) {
+                js.addStaticValue("static ${it.propertyName}", it.propertyType, it.description)
+            } else {
+                js.addStaticValue(it.propertyName, it.propertyType, it.description)
+            }
         }
 
         return when (jsClass.className) {
-            "Global" -> js.getContent(true,jsClass.className)
+            "Global" -> js.getContent(true, jsClass.className)
             "mc" -> {
                 ClassData.classInfo = jsClass
-                ClassData.classCache = ClassData.classCache + js.getContent(true,jsClass.className)
+                ClassData.classCache = ClassData.classCache + js.getContent(true, jsClass.className)
                 return "no"
             }
             else -> {
-                js.getContent(false,jsClass.className)
+                js.getContent(false, jsClass.className)
             }
         }
 
